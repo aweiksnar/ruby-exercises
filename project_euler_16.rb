@@ -20,5 +20,4 @@ class Power_digit_sum
   end
 end
 
-d = Power_digit_sum.new(2**1000)
-p d.sum_of_digits #=> 1366
+p Power_digit_sum.new(2**1000).sum_of_digits #=> 1366
