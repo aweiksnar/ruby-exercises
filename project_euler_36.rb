@@ -20,4 +20,4 @@ class DoubleBasePalindromeSum
 
 end
 
-p DoubleBasePalindromeSum.new(1..999_999).loop_through_range
+p DoubleBasePalindromeSum.new(1..999_999).loop_through_range #=> 872187
