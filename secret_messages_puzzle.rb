@@ -69,9 +69,7 @@ class VigenereCipher
   end
 
   def decode_text
-    @paragraph_letter_array.each do |letter|
-      replace_letter_if_necessary(letter)
-    end
+    @paragraph_letter_array.each {|letter| replace_letter_if_necessary(letter)}
   end
 
   def print_decoded_paragraph
