@@ -12,9 +12,7 @@ class Fizzbuzz
   end
 
   def test_range
-    @input.each do |num|
-      check_fizzbuzz_nums(num)
-    end
+    @input.each {|num| check_fizzbuzz_nums(num)}
   end
 
   def check_fizzbuzz_nums(num)
