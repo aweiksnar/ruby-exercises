@@ -31,6 +31,21 @@ def check_guess(guess)
   end
 end
 
+__END__
+
+@@index
+<html>
+  <head></head>
+  <body>
+    <p><%= message %><p>
+    <form>
+      <input type='text' name='guess' />
+      <input type='submit' value='Guess!' />
+    </form>
+  </body>
+</html>
+
+
 
 
 
