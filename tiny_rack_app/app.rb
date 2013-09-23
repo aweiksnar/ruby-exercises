@@ -3,11 +3,10 @@ class TinyApp
 
   def call(env)
     request  = Rack::Request.new(env)
-    body = "Hello, Thank you for visiting #{request.fullpath}"
     case request.fullpath
     when "/" then [200, {"Content-Type" => "text/plain"}, ["Welcome to the root url"]]
     when %r{/lobster*} then Rack::Lobster.new.call(env)
-    else [200, {"Content-Type" => "text/plain"}, [body]]
+    else [200, {"Content-Type" => "text/plain"}, ["Hello, Thank you for visiting #{request.fullpath}"]]
     end
   end
 end
