@@ -2,7 +2,7 @@ class TinyApp
   require 'rack/lobster'
 
   def call(env)
-    request  = Rack::Request.new(env)
+    request = Rack::Request.new(env)
     case request.fullpath
     when "/" then [200, {"Content-Type" => "text/plain"}, ["Welcome to the root url"]]
     when %r{/lobster*} then Rack::Lobster.new.call(env)
