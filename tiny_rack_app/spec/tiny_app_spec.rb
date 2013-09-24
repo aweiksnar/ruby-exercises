@@ -47,7 +47,7 @@ describe "TinyMiddleware" do
     expect(last_response.body).to eq("Welcome to the root url\n\nThis app is terrible. Why not check out /lobster?")
   end
 
-  it "does not suggest checking out the lobster path if you are on the lobster path" do
+  it "does not suggest checking out the /lobster path if you are on the lobster path" do
     get "/lobster"
 
     expect(last_response.body.include?("This app is terrible. Why not check out /lobster?")).to eq(false)
