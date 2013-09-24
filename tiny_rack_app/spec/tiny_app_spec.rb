@@ -14,6 +14,7 @@ describe 'TinyApp' do
 
   it "welcomes the user to the root url" do
     get "/"
+
     expect(last_response).to be_ok
     expect(last_response.body).to eq("Welcome to the root url")
   end
@@ -30,5 +31,25 @@ describe 'TinyApp' do
 
     expect(last_response).to be_ok
     expect(last_response.body.include?("Lobstericious!")).to eq(true)
+  end
+end
+
+describe "TinyMiddleware" do
+  include Rack::Test::Methods
+
+  def app
+    TinyMiddleware.new(TinyApp.new)
+  end
+
+  it "suggests checking out the /lobster path" do
+    get "/"
+
+    expect(last_response.body).to eq("Welcome to the root url\n\nThis app is terrible. Why not check out /lobster?")
+  end
+
+  it "does not suggest checking out the lobster path if you are on the lobster path" do
+    get "/lobster"
+
+    expect(last_response.body.include?("This app is terrible. Why not check out /lobster?")).to eq(false)
   end
 end
