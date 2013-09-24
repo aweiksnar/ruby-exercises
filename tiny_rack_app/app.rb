@@ -18,7 +18,7 @@ class TinyMiddleware
 
   def call(env)
     status, headers, body = @app.call(env)
-    new_body = body << "\n\nThis app is terrible. Why not check out /lobster?" if body.is_a? Array
+    body << "\n\nThis app is terrible. Why not check out /lobster?" if body.is_a? Array
     [status, headers, body]
   end
 end
