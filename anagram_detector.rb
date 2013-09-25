@@ -36,12 +36,13 @@ describe "AnagramDetector" do
     config.color_enabled = true
   end
 
-  it "should exist" do
-    expect(AnagramDetector.is_a? Class).to eq(true)
-  end
-
   before :each do
     @anagram_detector = AnagramDetector.new("listen", %w(enlists google inlets banana))
+  end
+
+
+  it "should exist" do
+    expect(AnagramDetector.is_a? Class).to eq(true)
   end
 
   it "should take in a test word and array of words upon creation" do
