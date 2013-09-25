@@ -40,7 +40,6 @@ describe "AnagramDetector" do
     @anagram_detector = AnagramDetector.new("listen", %w(enlists google inlets banana))
   end
 
-
   it "should exist" do
     expect(AnagramDetector.is_a? Class).to eq(true)
   end
