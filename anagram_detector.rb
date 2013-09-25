@@ -16,10 +16,6 @@ class AnagramDetector
     delete_word_from_test_array_if_it_is_not_an_anagram
   end
 
-  def delete_word_from_test_array_if_it_is_not_an_anagram
-    @test_array.delete_if {|word| word.each_char.sort != @test_word.each_char.sort}
-  end
-
   def downcase_test_word
     @test_word = test_word.downcase
   end
@@ -27,6 +23,11 @@ class AnagramDetector
   def downcase_test_array
     @test_array.map! {|word| word = word.downcase}
   end
+
+  def delete_word_from_test_array_if_it_is_not_an_anagram
+    @test_array.delete_if {|word| word.each_char.sort != @test_word.each_char.sort}
+  end
+
 end
 
 describe "AnagramDetector" do
