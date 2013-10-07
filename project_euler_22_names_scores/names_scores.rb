@@ -4,7 +4,7 @@ class NameScorer
   attr_accessor :file
 
   def initialize(file)
-    @file = file_split_into_array_of_names("names.txt")
+    @file = file_split_into_array_of_names(file)
   end
 
   def letter_value_hash
